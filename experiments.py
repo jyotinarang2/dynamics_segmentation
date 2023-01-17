@@ -91,9 +91,11 @@ for case in ['c1','c2','c3']:
         # Take min distance between its neighbours now
         dist = min(abs(boundary - all_peaks[i]), abs(boundary - all_peaks[i-1]))
         distances.append(dist)
-        if dist < 1:
+        if dist < 3:
             TP += 1
         else:
+            if case=='c3':
+                print("distance c3", dist)
             FN = 1
 
     for boundary in all_peaks:

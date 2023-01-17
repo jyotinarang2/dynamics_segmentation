@@ -14,14 +14,11 @@ import essentia
 from essentia.standard import *
 
 def predict_boundaries(results, paths, hop_size, downsampling, sr):
-    print(paths)
     predictions = {}
     invalid_songs = []
 
 # some songs seem to be too short (need to determine how short) for the analysis
 # they seem to almost entirely be speech instead of music, so they won't have annotations anyway
-
-
     for path in paths:
         p_name = os.path.basename(path)
         print(p_name)
